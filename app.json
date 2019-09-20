@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/tabs/eld/eld",
+    "pages/tabs/task/task",
+    "pages/tabs/message/message",
+    "pages/tabs/settings/settings"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/tabs/eld/eld",
+        "text": "老人",
+        "iconPath": "res/old.png",
+        "selectedIconPath": "res/old.png"
+      },
+      {
+        "pagePath": "pages/tabs/task/task",
+        "text": "任务",
+        "iconPath": "res/task.png",
+        "selectedIconPath": "res/task.png"
+      },
+      {
+        "pagePath": "pages/tabs/message/message",
+        "text": "消息",
+        "iconPath": "res/message.png",
+        "selectedIconPath": "res/message.png"
+      },
+      {
+        "pagePath": "pages/tabs/settings/settings",
+        "text": "我的",
+        "iconPath": "res/settings.png",
+        "selectedIconPath": "res/settings.png"
+      }
+    ]
+  }
+}
