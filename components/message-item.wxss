@@ -1,0 +1,28 @@
+.message-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.message-column {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.message-icon {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.message-name {
+  color: #aaa;
+}
+
+.message-time {
+  color: rgb(105, 4, 21);
+  margin: 10rpx;
+  font-size: 12px;
+}

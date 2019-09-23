@@ -1,0 +1,12 @@
+<eld-item>
+  <view class="eld-row" bindtap="onMyButtonTap">
+    <image class="eld-icon" src="{{iconPath}}"></image>
+    <view class="eld-column">
+      <text class="eld-name">{{name}}</text>
+      <view class="eld-row">
+        <text class="eld-gender">性别:{{gender}}</text>
+        <text class="eld-birty-day">生日:{{birtyDay}}</text>
+      </view>
+    </view>
+  </view>
+</eld-item>

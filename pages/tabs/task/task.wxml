@@ -1,2 +1,4 @@
 <!--pages/tabs/task.wxml-->
-<text>任务列表</text>
+<view wx:for-items="{{dataList}}">
+  <task-item name="{{item.name}}" iconPath="{{item.iconPath}}" taskTime="{{item.taskTime}}" />
+</view>

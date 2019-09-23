@@ -1,5 +1,5 @@
 {
   "usingComponents": {
-    "eld-item":"/components/custom-component"
+    "eld-item":"/components/eld-item"
   }
 }

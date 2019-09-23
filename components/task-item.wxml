@@ -1,0 +1,9 @@
+<task-item>
+  <view class="task-row" bindtap="onMyButtonTap">
+    <image class="task-icon" src="{{iconPath}}"></image>
+    <view class="task-column">
+      <text class="task-name">{{name}}</text>
+      <text class="task-time">{{taskTime}}</text>
+    </view>
+  </view>
+</task-item>

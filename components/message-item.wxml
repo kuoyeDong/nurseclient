@@ -1,0 +1,9 @@
+<task-item>
+  <view class="message-row" bindtap="onMyButtonTap">
+    <image class="message-icon" src="{{iconPath}}"></image>
+    <view class="message-column">
+      <text class="message-name">{{name}}</text>
+      <text class="message-time">{{messageTime}}</text>
+    </view>
+  </view>
+</task-item>

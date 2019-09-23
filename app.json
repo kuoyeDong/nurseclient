@@ -2,13 +2,12 @@
   "pages": [
     "pages/tabs/eld/eld",
     "pages/tabs/task/task",
-    "pages/tabs/message/message",
-    "pages/tabs/settings/settings"
+    "pages/tabs/message/message"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "养老院护工助手",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
@@ -16,7 +15,7 @@
     "list": [
       {
         "pagePath": "pages/tabs/eld/eld",
-        "text": "老人",
+        "text": "长者",
         "iconPath": "res/old.png",
         "selectedIconPath": "res/old.png"
       },
@@ -28,15 +27,9 @@
       },
       {
         "pagePath": "pages/tabs/message/message",
-        "text": "消息",
-        "iconPath": "res/message.png",
-        "selectedIconPath": "res/message.png"
-      },
-      {
-        "pagePath": "pages/tabs/settings/settings",
-        "text": "我的",
-        "iconPath": "res/settings.png",
-        "selectedIconPath": "res/settings.png"
+        "text": "SSO",
+        "iconPath": "res/call_message.png",
+        "selectedIconPath": "res/call_message.png"
       }
     ]
   }

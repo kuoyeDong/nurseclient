@@ -1,2 +1,4 @@
 <!--pages/tabs/message.wxml-->
-<text>消息列表</text>
+<view wx:for-items="{{dataList}}">
+  <message-item iconPath="{{item.iconPath}}" name="{{item.name}}" messageTime="{{item.messageTime}}"></message-item>
+</view>

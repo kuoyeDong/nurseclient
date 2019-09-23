@@ -1,7 +1,0 @@
-<!-- 组件 custom-component.wxml -->
-<custom-component>
-  <view class="userinfo" bindtap="onMyButtonTap">
-    <image class="eld-icon" src="{{iconPath}}"></image>
-    <text class="eld-name">{{name}}</text>
-  </view>
-</custom-component>

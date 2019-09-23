@@ -1,4 +1,4 @@
 <!--pages/tabs/eld.wxml-->
 <view wx:for-items="{{dataList}}">
-  <eld-item></eld-item>
+  <eld-item name="{{item.name}}" iconPath="{{item.iconPath}}" birtyDay="{{item.birtyDay}}" gender="{{item.gender}}"></eld-item>
 </view>

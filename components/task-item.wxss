@@ -1,0 +1,28 @@
+.task-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.task-column {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.task-icon {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.task-name {
+  color: #aaa;
+}
+
+.task-time {
+  color: rgb(105, 4, 21);
+  margin: 10rpx;
+  font-size: 12px
+}
