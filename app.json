@@ -2,7 +2,10 @@
   "pages": [
     "pages/tabs/eld/eld",
     "pages/tabs/task/task",
-    "pages/tabs/message/message"
+    "pages/tabs/message/message",
+    "pages/taskdetial/taskdetial",
+    "pages/ssodetial/ssodetial"
+   
   ],
   "window": {
     "backgroundTextStyle": "light",

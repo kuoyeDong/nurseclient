@@ -1,0 +1,17 @@
+.ssodetial-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex;
+  margin: 20rpx;
+}
+
+.ssodetial-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ssodetial-text {
+  color: #aaa;
+  margin: 20rpx;
+}

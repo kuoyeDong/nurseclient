@@ -1,0 +1,4 @@
+<view class="taskdetial-column">
+<text class="taskdetial-text">{{taskName}}</text>
+<van-button class="taskdetial-row" bindtap="taskFinish" type="primary">任务已完成</van-button>
+</view>

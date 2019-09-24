@@ -41,9 +41,9 @@ Component({
   },
 
   methods: {
-    onMyButtonTap: function() {
+    onTaskItemTap: function() {
      wx:wx.navigateTo({
-       url: '',
+       url: '/pages/taskdetial/taskdetial',
        success: function(res) {},
        fail: function(res) {},
        complete: function(res) {},

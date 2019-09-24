@@ -1,0 +1,17 @@
+.taskdetial-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex;
+  margin: 20rpx;
+}
+
+.taskdetial-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.taskdetial-text {
+  color: #aaa;
+  margin: 20rpx;
+}

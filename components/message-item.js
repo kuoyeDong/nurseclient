@@ -42,10 +42,12 @@ Component({
   },
 
   methods: {
-    onMyButtonTap: function () {
-      this.setData({
-        // 更新属性和数据的方法与更新页面数据的方法类似
-        taskName: 'Test'
+    onMessageItemTap: function () {
+      wx:wx.navigateTo({
+        url: '/pages/ssodetial/ssodetial',
+        success: function(res) {},
+        fail: function(res) {},
+        complete: function(res) {},
       })
     },
   }

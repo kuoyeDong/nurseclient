@@ -1,6 +1,6 @@
 //app.js
 App({
-  onLaunch: function () {
+  onLaunch: function() {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -33,31 +33,38 @@ App({
       }
     })
 
-    var taskSocket =wx.connectSocket({
-      url: 'wss://example.qq.com',
-      header: {
-        'content-type': 'application/json'
-      },
-      protocols: ['protocol1']
+    var taskSocket = wx.connectSocket({
+      // url: 'wss://websck.eloeg.wang:20001',
+      url: 'ws://10.10.92.161:8901/websocket/doufu',
+      // url: 'wss://aliiot.on-bright.com/queueServer',
     })
 
-    taskSocket.onMessage(data => {
+    wx.onSocketError(function() {
+      console.log('onSocketError')
+    })
+    wx.onSocketOpen(function(res) {
+      console.log('onSocketOpen')
+    })
+
+    taskSocket.onMessage((data) => {
+      console.log('onMessage')
+      console.log(data)
       wx.showModal({
-        content: data,
+        content: '收到呼叫',
         showCancel: true,
         cancelText: '忽略',
         confirmText: '前往',
-        success: function (res) {
+        success: function(res) {
           if (res.confirm) {
             console.log('用户点击确定')
           } else if (res.cancel) {
             console.log('用户点击取消')
           }
         },
-        fail: function (res) {
+        fail: function(res) {
           console.log('fail')
         },
-        complete: function (res) {
+        complete: function(res) {
           console.log('complete')
         },
       })
