@@ -11,8 +11,19 @@
   align-items: center;
 }
 
+.taskdetial-img {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
 .taskdetial-text {
   color: #aaa;
   margin: 20rpx;
-  margin-top: 100rpx;
+}
+
+.taskdetial-time {
+  color: rgb(54, 34, 34);
+  margin: 20rpx;
 }

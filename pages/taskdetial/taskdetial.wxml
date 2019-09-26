@@ -1,4 +1,7 @@
 <view class="taskdetial-column">
-<text class="taskdetial-text">{{taskName}}</text>
-<van-button class="taskdetial-row" bindtap="taskFinish" type="primary">任务已完成</van-button>
+  <image class="taskdetial-img" src="{{iconPath}}"></image>
+  <text class="taskdetial-text">任务名称:{{taskName}}</text>
+  <text class="taskdetial-time">任务时间：{{taskTime}}</text>
+  <text class="taskdetial-text">{{finishTips}}</text>
+  <van-button class="taskdetial-row" bindtap="taskFinish" type="primary">任务已完成</van-button>
 </view>

@@ -64,31 +64,43 @@ App({
       })
       return timeStr
     }
-    var taskSocket = wx.connectSocket({
+    wx.connectSocket({
       // url: 'wss://websck.eloeg.wang:20001',
-      // url: 'wss://aliiot.on-bright.com/webWxSocket/adolf',
-      url: 'ws://192.168.200.116:8901/webWxSocket/fasfsafas22'
+      url: 'wss://aliiot.on-bright.com/webWxSocket/adolf',
+      // url: 'ws://192.168.200.116:8901/webWxSocket/fasfsafas22'
       // url: 'wss://aliiot.on-bright.com/queueServer',
     })
 
     wx.onSocketError(function() {
       console.log('onSocketError')
     })
+    
     wx.onSocketOpen(function(res) {
       console.log('onSocketOpen')
     })
 
-    taskSocket.onMessage(({
+    wx.onSocketClose(function(res) {
+      console.log('onSocketClose')
+      wx.connectSocket({
+        // url: 'wss://websck.eloeg.wang:20001',
+        url: 'wss://aliiot.on-bright.com/webWxSocket/adolf',
+        // url: 'ws://192.168.200.116:8901/webWxSocket/fasfsafas22'
+        // url: 'wss://aliiot.on-bright.com/queueServer',
+      })
+    })
+
+    wx.onSocketMessage(function({
       data
-    }) => {
-      console.log('onMessage')
+    }) {
+      console.log('onSocketMessage')
       var jo = JSON.parse(data)
-      var show = (jo.type == 1)
+      var show = (jo.type == 0)
       console.log(jo);
       if (show) {
-        var time = parseTime(jo.alarmTime*1)
+        var time = parseTime(jo.alarmTime * 1)
         wx.showModal({
-          content: time+'曾锦秀SSO呼叫\n',
+          title: '曾锦秀SSO呼叫',
+          content: '呼叫时间:' + time + ',请前往协助！',
           showCancel: true,
           cancelText: '忽略',
           confirmText: '前往',
@@ -108,6 +120,7 @@ App({
         })
       }
     })
+
   },
   globalData: {
     userInfo: null

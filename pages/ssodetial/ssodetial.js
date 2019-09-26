@@ -5,14 +5,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-    name:'这位长者'
+    name: '这位长者',
+    iconPath: '',
+    messageTime: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    this.setData({
+      name: options.name,
+      iconPath: options.iconPath,
+      messageTime: options.messageTime
+    })
   },
 
   /**

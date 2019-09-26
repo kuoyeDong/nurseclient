@@ -7,44 +7,44 @@ Page({
   data: {
     dataList: [{
       name: '曾锦英',
-      iconPath: '../res/oldwoman.png',
-      messageTime: '2019-9-26 09:00'
+      iconPath: '/res/oldwoman.png',
+      messageTime: '2019-9-27 09:00'
     }, {
       name: '石亚娣',
-      iconPath: '../res/oldwoman.png',
-      messageTime: '2019-9-26 09:30'
+      iconPath: '/res/oldwoman.png',
+      messageTime: '2019-9-27 09:30'
     }, {
       name: '黄观勤',
-      iconPath: '../res/oldwoman.png',
-      messageTime: '2019-9-26 10:00'
+      iconPath: '/res/oldwoman.png',
+      messageTime: '2019-9-27 10:00'
     }, {
       name: '朱美婵',
-      iconPath: '../res/oldwoman.png',
-      messageTime: '2019-9-26 10:00'
+      iconPath: '/res/oldwoman.png',
+      messageTime: '2019-9-27 10:00'
     }, {
       name: '刘秋菊',
-      iconPath: '../res/oldwoman.png',
-      messageTime: '2019-9-26 10:00'
+      iconPath: '/res/oldwoman.png',
+      messageTime: '2019-9-27 10:00'
     }, {
       name: '刘灶有',
-      iconPath: '../res/oldwoman.png',
-      messageTime: '2019-9-26 10:00'
+      iconPath: '/res/oldwoman.png',
+      messageTime: '2019-9-27 10:00'
     }, {
       name: '李蕉莲',
-      iconPath: '../res/oldwoman.png',
-      messageTime: '2019-9-26 10:00'
+      iconPath: '/res/oldwoman.png',
+      messageTime: '2019-9-27 10:00'
     }, {
       name: '江叔水',
-      iconPath: '../res/oldman.png',
-      messageTime: '2019-9-26 10:00'
+      iconPath: '/res/oldman.png',
+      messageTime: '2019-9-27 10:00'
     }, {
       name: '李伟芳',
-      iconPath: '../res/oldwoman.png',
-      messageTime: '2019-9-26 10:00'
+      iconPath: '/res/oldwoman.png',
+      messageTime: '2019-9-27 10:00'
     }, {
       name: '黄张娣',
-      iconPath: '../res/oldwoman.png',
-      messageTime: '2019-9-26 10:00'
+      iconPath: '/res/oldwoman.png',
+      messageTime: '2019-9-27 10:00'
     }],
   },
 

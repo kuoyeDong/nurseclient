@@ -6,37 +6,37 @@ Page({
    */
   data: {
     dataList: [{
-      name: '李伟芳聊天',
-      iconPath: '../res/talk.png',
-      taskTime: '2019-9-26 09:00'
+      name: '石亚娣聊天',
+      iconPath: '/res/talk.png',
+      taskTime: '2019-9-27 09:00'
     }, {
       name: '石亚娣换尿布',
-      iconPath: '../res/diaper.png',
-      taskTime: '2019-9-26 09:30'
+      iconPath: '/res/diaper.png',
+      taskTime: '2019-9-27 09:30'
     }, {
       name: '李伟芳洗澡',
-      iconPath: '../res/bathing.png',
-      taskTime: '2019-9-26 10:00'
+      iconPath: '/res/bathing.png',
+      taskTime: '2019-9-27 10:00'
     }, {
       name: '江叔水晒太阳',
-      iconPath: '../res/sunbathing.png',
-      taskTime: '2019-9-26 10:30'
+      iconPath: '/res/sunbathing.png',
+      taskTime: '2019-9-27 10:30'
     }, {
       name: '李伟芳聊天',
-      iconPath: '../res/talk.png',
-      taskTime: '2019-9-26 11:00'
+      iconPath: '/res/talk.png',
+      taskTime: '2019-9-27 11:00'
     }, {
       name: '黄观勤换尿布',
-      iconPath: '../res/diaper.png',
-      taskTime: '2019-9-26 11:30'
+      iconPath: '/res/diaper.png',
+      taskTime: '2019-9-27 11:30'
     }, {
-      name: '李伟芳洗澡',
-      iconPath: '../res/bathing.png',
-      taskTime: '2019-9-26 14:00'
+      name: '刘秋菊洗澡',
+      iconPath: '/res/bathing.png',
+      taskTime: '2019-9-27 14:00'
     }, {
       name: '刘秋菊晒太阳',
-      iconPath: '../res/sunbathing.png',
-      taskTime: '2019-9-26 16:00'
+      iconPath: '/res/sunbathing.png',
+      taskTime: '2019-9-27 16:00'
     }],
   },
 
@@ -44,35 +44,35 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    console.log('onLoad')
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-
+    console.log('onReady')
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    console.log('onShow')
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function() {
-
+    console.log('onHide')
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function() {
-
+    console.log('onUnload')
   },
 
   /**

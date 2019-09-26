@@ -1,7 +1,7 @@
 <view class="ssodetial-column">
+  <image class="ssodetial-img" src="{{iconPath}}"></image>
+  <text class="ssodetial-time">呼叫时间:{{messageTime}}</text>
   <text class="ssodetial-text">{{name}}呼叫了，请即前往协助</text>
-  <view class="ssodetial-column">
-    <van-button class="ssodetial-row" bindtap="ssoConfirm" type="danger">前往</van-button>
-    <van-button class="ssodetial-row" bindtap="ssoCancel" type="default">忽略</van-button>
-  </view>
+  <van-button class="ssodetial-row" bindtap="ssoConfirm" type="danger">前往</van-button>
+  <van-button class="ssodetial-row" bindtap="ssoCancel" type="default">忽略</van-button>
 </view>

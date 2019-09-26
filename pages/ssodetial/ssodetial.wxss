@@ -14,5 +14,16 @@
 .ssodetial-text {
   color: #aaa;
   margin: 20rpx;
-  margin-top: 200rpx;
+}
+
+.ssodetial-img {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.ssodetial-time {
+  color: rgb(54, 34, 34);
+  margin: 20rpx;
 }

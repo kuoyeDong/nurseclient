@@ -42,12 +42,13 @@ Component({
 
   methods: {
     onTaskItemTap: function() {
-     wx:wx.navigateTo({
-       url: '/pages/taskdetial/taskdetial',
-       success: function(res) {},
-       fail: function(res) {},
-       complete: function(res) {},
-     })
+      wx: wx.navigateTo({
+        url: '/pages/taskdetial/taskdetial?name=' + this.properties.name + '&taskTime=' + this.properties.taskTime +
+          '&iconPath=' + this.properties.iconPath,
+        success: function(res) {},
+        fail: function(res) {},
+        complete: function(res) {},
+      })
     },
   }
 
