@@ -74,7 +74,7 @@ App({
     wx.onSocketError(function() {
       console.log('onSocketError')
     })
-    
+
     wx.onSocketOpen(function(res) {
       console.log('onSocketOpen')
     })
@@ -94,7 +94,7 @@ App({
     }) {
       console.log('onSocketMessage')
       var jo = JSON.parse(data)
-      var show = (jo.type == 0)
+      var show = (jo.type == 1)
       console.log(jo);
       if (show) {
         var time = parseTime(jo.alarmTime * 1)
@@ -108,7 +108,7 @@ App({
             if (res.confirm) {
               console.log('用户点击确定')
             } else if (res.cancel) {
-              console.log('用户点击取消')
+              console.log('用户点击取消')  
             }
           },
           fail: function(res) {
