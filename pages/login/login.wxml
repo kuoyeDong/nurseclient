@@ -1,0 +1,6 @@
+<view class="login-column">
+  <input class="login-column" placeholder="账号" bindinput='nameInput'></input>
+  <input class="login-column" placeholder="密码" password="true" bindinput='pwdInput'></input>
+  <van-button class="login-column" bindtap="nurseLogin" type="danger">登录</van-button>
+  <text class="login-text">如果您还没有账号，请与管理处联系，该账号密码由管理处进行管理，并未开放注册</text>
+</view>

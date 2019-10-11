@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/login/login",
     "pages/tabs/eld/eld",
     "pages/tabs/task/task",
     "pages/tabs/message/message",
