@@ -5,57 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    dataList: [{
-      name: '曾锦英',
-      birtyDay: '1932-9.14',
-      gender: '女',
-      iconPath: '../res/oldwoman.png'
-    }, {
-      name: '石亚娣',
-      birtyDay: '1928-1.11',
-      gender: '女',
-      iconPath: '../res/oldwoman.png'
-    }, {
-      name: '黄观勤',
-      birtyDay: '1923-5.10',
-      gender: '女',
-      iconPath: '../res/oldwoman.png'
-    }, {
-      name: '朱美婵',
-      birtyDay: '1932-10.29',
-      gender: '女',
-      iconPath: '../res/oldwoman.png'
-    }, {
-      name: '刘秋菊',
-      birtyDay: '1947-4.20',
-      gender: '女',
-      iconPath: '../res/oldwoman.png'
-    }, {
-      name: '刘灶有',
-      birtyDay: '1936-10.11',
-      gender: '女',
-      iconPath: '../res/oldwoman.png'
-    }, {
-      name: '李蕉莲',
-      birtyDay: '1931-10.09',
-      gender: '女',
-      iconPath: '../res/oldwoman.png'
-    }, {
-      name: '江叔水',
-      birtyDay: '1938-3.08',
-      gender: '男',
-      iconPath: '../res/oldman.png'
-    }, {
-      name: '李伟芳',
-      birtyDay: '1957-7.08',
-      gender: '女',
-      iconPath: '../res/oldwoman.png'
-    }, {
-      name: '黄张娣',
-      birtyDay: '1936-12.15',
-      gender: '女',
-      iconPath: '../res/oldwoman.png'
-    }],
+    dataList: [],
   },
 
   /**
@@ -112,5 +62,29 @@ Page({
    */
   onShareAppMessage: function() {
     
+  },
+
+  queryEld: function () {
+    var _this = this;
+    wx.request({
+      url: 'https://aliiot.on-bright.com/css/nurse/elder/list',
+      header: {
+        'Authorization': 'bnVyc2U6bnVyc2U'
+      },
+      data: {
+        access_token: ap.globalData.accessToken,
+        nurseId: ap.globalData.nurseId,
+        pageNo: 1,
+        pageSize: 100,
+      },
+      success(res) {
+        console.log(res.data);
+        var json = JSON.parse(res);
+        var eldList = json.data.records;
+        _this.setData({
+          dataList: eldList
+        })
+      }
+    })
   }
 })

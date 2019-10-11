@@ -1,3 +1,5 @@
+const app = getApp()
+
 Page({
 
   data: {
@@ -18,12 +20,11 @@ Page({
     })
   },
   nurseLogin: function() {
-    console.log(this.data.username);
     let _this = this;
     wx.request({
       url: 'https://aliiot.on-bright.com/nursinghome/oauth/token',
       header: {
-        'Authorization': 'bnVyc2U6bnVyc2U',
+        'Authorization': 'bnVyc2U6bnVyc2U'
       },
       data: {
         grant_type: 'password',
@@ -34,11 +35,11 @@ Page({
       },
       success(res) {
         console.log(res.data);
-        var json = JSON.parse(JSON.parse(res).data);
-        var accessToken = json.access_token;
-        _that.setData({
-          accessToken:accessToken
-        });
+        var json = JSON.parse(res);
+        var accessToken = json.data.access_token;
+        var nurseId = json.data.nurseId;
+        app.globalData.accessToken = accessToken;
+        app.globalData.nurseId = nurseId;
         wx.switchTab({
           url: '/pages/tabs/eld/eld',
         })

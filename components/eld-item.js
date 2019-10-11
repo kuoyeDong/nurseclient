@@ -13,10 +13,10 @@ Component({
     iconPath: {
       type: String,
     },
-    birtyDay: {
+    position: {
       type: String,
     },
-    gender: {
+    phone: {
       type: String,
     }
   },

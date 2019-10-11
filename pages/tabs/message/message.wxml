@@ -1,4 +1,4 @@
 <!--pages/tabs/message.wxml-->
 <view wx:for-items="{{dataList}}">
-  <message-item iconPath="{{item.iconPath}}" name="{{item.name}}" messageTime="{{item.messageTime}}"></message-item>
+  <message-item iconPath="/res/oldwoman.png" name="{{item.elderName}}{{item.callTaskName}}" messageTime="{{item.execTime}}"></message-item>
 </view>

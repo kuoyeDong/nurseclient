@@ -1,50 +1,20 @@
 // pages/tabs/task.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    dataList: [{
-      name: '石亚娣聊天',
-      iconPath: '/res/talk.png',
-      taskTime: '2019-9-27 09:00'
-    }, {
-      name: '石亚娣换尿布',
-      iconPath: '/res/diaper.png',
-      taskTime: '2019-9-27 09:30'
-    }, {
-      name: '李伟芳洗澡',
-      iconPath: '/res/bathing.png',
-      taskTime: '2019-9-27 10:00'
-    }, {
-      name: '江叔水晒太阳',
-      iconPath: '/res/sunbathing.png',
-      taskTime: '2019-9-27 10:30'
-    }, {
-      name: '李伟芳聊天',
-      iconPath: '/res/talk.png',
-      taskTime: '2019-9-27 11:00'
-    }, {
-      name: '黄观勤换尿布',
-      iconPath: '/res/diaper.png',
-      taskTime: '2019-9-27 11:30'
-    }, {
-      name: '刘秋菊洗澡',
-      iconPath: '/res/bathing.png',
-      taskTime: '2019-9-27 14:00'
-    }, {
-      name: '刘秋菊晒太阳',
-      iconPath: '/res/sunbathing.png',
-      taskTime: '2019-9-27 16:00'
-    }],
+    dataList: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    console.log('onLoad')
+    console.log('onLoad');
+    queryTask();
   },
 
   /**
@@ -94,5 +64,30 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+
+  queryTask: function() {
+    var _this = this;
+    wx.request({
+      url: 'https://aliiot.on-bright.com/css/nurse/task/list',
+      header: {
+        'Authorization': 'bnVyc2U6bnVyc2U'
+      },
+      data: {
+        access_token: ap.globalData.accessToken,
+        nurseId: ap.globalData.nurseId,
+        pageNo: 1,
+        pageSize: 100,
+      },
+      success(res) {
+        console.log(res.data);
+        var json = JSON.parse(res);
+        var taskList = json.data.records;
+        _this.setData({
+          dataList: taskList
+        })
+      }
+    })
   }
+
 })

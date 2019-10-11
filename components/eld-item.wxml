@@ -4,8 +4,8 @@
     <view class="eld-column">
       <text class="eld-name">{{name}}</text>
       <view class="eld-row">
-        <text class="eld-gender">性别:{{gender}}</text>
-        <text class="eld-birty-day">生日:{{birtyDay}}</text>
+        <text class="eld-gender">电话:{{phone}}</text>
+        <text class="eld-birty-day">位置:{{position}}</text>
       </view>
     </view>
   </view>

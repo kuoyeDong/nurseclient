@@ -102,5 +102,29 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+
+  queryCallTask: function () {
+    var _this = this;
+    wx.request({
+      url: 'https://aliiot.on-bright.com/css/nurse/calltask/list',
+      header: {
+        'Authorization': 'bnVyc2U6bnVyc2U'
+      },
+      data: {
+        access_token: ap.globalData.accessToken,
+        nurseId: ap.globalData.nurseId,
+        pageNo: 1,
+        pageSize: 100,
+      },
+      success(res) {
+        console.log(res.data);
+        var json = JSON.parse(res);
+        var callTaskList = json.data.records;
+        _this.setData({
+          dataList: callTaskList
+        })
+      }
+    })
   }
 })
