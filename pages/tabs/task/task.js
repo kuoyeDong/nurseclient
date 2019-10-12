@@ -14,7 +14,27 @@ Page({
    */
   onLoad: function(options) {
     console.log('onLoad');
-    queryTask();
+    var _this = this;
+    wx.request({
+      url: app.globalData.url + '/css/nurse/task/list',
+      header: {
+        'Authorization': 'Basic bnVyc2U6bnVyc2U=',
+        'Content-type': 'application/x-www-form-urlencoded;charset=UTF-8'
+      },
+      data: {
+        access_token: app.globalData.accessToken,
+        pageNo: 1,
+        pageSize: 100,
+      },
+      success(res) {
+        var data = res.data;
+        console.log(data);
+        var taskList = data.data.records;
+        _this.setData({
+          dataList: taskList
+        })
+      }
+    })
   },
 
   /**
@@ -66,28 +86,5 @@ Page({
 
   },
 
-  queryTask: function() {
-    var _this = this;
-    wx.request({
-      url: 'https://aliiot.on-bright.com/css/nurse/task/list',
-      header: {
-        'Authorization': 'bnVyc2U6bnVyc2U'
-      },
-      data: {
-        access_token: ap.globalData.accessToken,
-        nurseId: ap.globalData.nurseId,
-        pageNo: 1,
-        pageSize: 100,
-      },
-      success(res) {
-        console.log(res.data);
-        var json = JSON.parse(res);
-        var taskList = json.data.records;
-        _this.setData({
-          dataList: taskList
-        })
-      }
-    })
-  }
 
 })

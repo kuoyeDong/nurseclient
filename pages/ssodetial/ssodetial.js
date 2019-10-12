@@ -1,4 +1,6 @@
 // pages/tabs/eld.js
+const app = getApp()
+
 Page({
 
   /**
@@ -7,7 +9,8 @@ Page({
   data: {
     name: '这位长者',
     iconPath: '',
-    messageTime: ''
+    messageTime: '',
+    callTaskId:''
   },
 
   /**
@@ -17,7 +20,8 @@ Page({
     this.setData({
       name: options.name,
       iconPath: options.iconPath,
-      messageTime: options.messageTime
+      messageTime: options.messageTime,
+      callTaskId: options.callTaskId
     })
   },
 
@@ -69,12 +73,27 @@ Page({
   onShareAppMessage: function() {
 
   },
-  //确认sso任务
+  //确认完成sso任务
   ssoConfirm: function() {
-    wx.navigateBack({
+    wx.request({
+      method: 'POST',
+      url: app.globalData.url + '/css/nurse/calltask/update',
+      header: {
+        'Authorization': 'Basic bnVyc2U6bnVyc2U=',
+      },
+      data: {
+        access_token: app.globalData.accessToken,
+        callTaskId: this.data.callTaskId
+      },
+      success(res) {
+        console.log(res.data)
+        wx.navigateBack({
 
+        })
+      }
     })
   },
+
   //忽略sso任务
   ssoCancel: function() {
     wx.navigateBack({

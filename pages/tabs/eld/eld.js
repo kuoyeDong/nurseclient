@@ -1,4 +1,5 @@
 // pages/tabs/eld.js
+const app = getApp()
 Page({
 
   /**
@@ -12,7 +13,28 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    var _this = this;
+    wx.request({
+      url: app.globalData.url + '/css/nurse/elder/list',
+      header: {
+        'Authorization': 'Basic bnVyc2U6bnVyc2U=',
+        'Content-type': 'application/x-www-form-urlencoded;charset=UTF-8'
+      },
+      data: {
+        access_token: app.globalData.accessToken,
+        pageNo: 1,
+        pageSize: 100,
+      },
+      success(res) {
+        var data = res.data;
+        console.log(data);
+        var eldList = data.data.records;
+        console.log(eldList.length)
+        _this.setData({
+          dataList: eldList
+        })
+      }
+    })
   },
 
   /**
@@ -47,7 +69,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
-    
+
   },
 
   /**
@@ -61,30 +83,10 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-    
+
   },
 
-  queryEld: function () {
-    var _this = this;
-    wx.request({
-      url: 'https://aliiot.on-bright.com/css/nurse/elder/list',
-      header: {
-        'Authorization': 'bnVyc2U6bnVyc2U'
-      },
-      data: {
-        access_token: ap.globalData.accessToken,
-        nurseId: ap.globalData.nurseId,
-        pageNo: 1,
-        pageSize: 100,
-      },
-      success(res) {
-        console.log(res.data);
-        var json = JSON.parse(res);
-        var eldList = json.data.records;
-        _this.setData({
-          dataList: eldList
-        })
-      }
-    })
+  queryEld: function() {
+
   }
 })

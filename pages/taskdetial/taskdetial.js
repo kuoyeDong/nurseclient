@@ -1,4 +1,5 @@
 // pages/tabs/eld.js
+const app = getApp()
 Page({
 
   /**
@@ -8,7 +9,8 @@ Page({
     taskName: '',
     finishTips: '如果任务已完成，可点击按钮确认',
     taskTime: '',
-    iconPath: ''
+    iconPath: '',
+    taskId: ''
   },
 
   /**
@@ -18,16 +20,15 @@ Page({
     this.setData({
       taskName: options.name,
       taskTime: options.taskTime,
-      iconPath: options.iconPath
+      iconPath: options.iconPath,
+      taskId: options.taskId
     });
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
-
-  },
+  onReady: function() {},
 
   /**
    * 生命周期函数--监听页面显示
@@ -72,22 +73,25 @@ Page({
   },
 
   taskFinish: function() {
-    var pages = getCurrentPages();
-    var prevPage = pages[pages.length - 2];
-    //直接调用上一个页面对象的setData()方法，把数据存到上一个页面中去
-    var cpdataList = prevPage.data.dataList
-    var index
-    for (var i = 0; i < cpdataList.length; i++) {
-      if (cpdataList[i].name == this.data.taskName) {
-        index = i
-      }
-    }
-    cpdataList.splice(index, 1)
-    prevPage.setData({
-      dataList: cpdataList
-    });
-    wx.navigateBack({
+    console.log('onLoad');
+    var _this = this;
+    wx.request({
+      method: 'POST',
+      url: app.globalData.url + '/css/nurse/task/update',
+      header: {
+        'Authorization': 'Basic bnVyc2U6bnVyc2U=',
+      },
+      data: {
+        access_token: app.globalData.accessToken,
+        taskId: this.data.taskId
+      },
+      success(res) {
+        console.log(res.data)
+        wx.navigateBack({
 
+        })
+      }
     })
+
   }
 })

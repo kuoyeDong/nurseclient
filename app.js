@@ -67,9 +67,9 @@ App({
       // 可靠的地址
       // url: 'wss://websck.eloeg.wang:20001',
       // 昂宝地址
-      url: 'wss://aliiot.on-bright.com/webWxSocket/adolf',
+      // url: 'wss://aliiot.on-bright.com/webWxSocket/adolf',
       // jj调试服务器地址
-      // url: 'ws://192.168.200.116:8901/webWxSocket/fasfsafas22'
+      url: 'ws://10.10.92.161:8901/webWxSocket/jetty'
       // web端使用地址
       // url: 'wss://aliiot.on-bright.com/queueServer',
     })
@@ -84,16 +84,16 @@ App({
 
     wx.onSocketClose(function(res) {
       console.log('onSocketClose')
-      // wx.connectSocket({
-      //   // 可靠的地址
-      //   // url: 'wss://websck.eloeg.wang:20001',
-      //   // 昂宝地址
-      //   url: 'wss://aliiot.on-bright.com/webWxSocket/adolf',
-      //   // jj调试服务器地址
-      //   // url: 'ws://192.168.200.116:8901/webWxSocket/fasfsafas22'
-      //   // web端使用地址
-      //   // url: 'wss://aliiot.on-bright.com/queueServer',
-      // })
+      wx.connectSocket({
+        // 可靠的地址
+        // url: 'wss://websck.eloeg.wang:20001',
+        // 昂宝地址
+        // url: 'wss://aliiot.on-bright.com/webWxSocket/adolf',
+        // jj调试服务器地址
+        url: 'ws://10.10.92.161:8901/webWxSocket/jetty'
+      // web端使用地址
+      // url: 'wss://aliiot.on-bright.com/queueServer',
+      })
     })
 
     wx.onSocketMessage(function({
@@ -101,19 +101,26 @@ App({
     }) {
       console.log('onSocketMessage');
       var jo = JSON.parse(data);
-      var show = (jo.type === 1);
+      var show = (jo.callTaskId !== null);
       console.log(jo);
       if (show) {
-        var time = parseTime(jo.alarmTime * 1);
+        // var time = parseTime(jo.alarmTime * 1);
         wx.showModal({
-          title: '曾锦秀SSO呼叫',
-          content: '呼叫时间:' + time + ',请前往协助！',
+          title: jo.elderName + jo.callTaskName,
+          content: '呼叫时间:' + jo.execTime + ',请前往协助！',
           showCancel: true,
           cancelText: '忽略',
           confirmText: '前往',
           success: function(res) {
             if (res.confirm) {
               console.log('用户点击确定')
+              wx: wx.navigateTo({
+                url: '/pages/ssodetial/ssodetial?name=' + jo.elderName + jo.callTaskName + '&iconPath=/res/call_message.png' +
+                  '&messageTime=' + jo.execTime + '&callTaskId=' + jo.callTaskId,
+                success: function(res) {},
+                fail: function(res) {},
+                complete: function(res) {},
+              })
             } else if (res.cancel) {
               console.log('用户点击取消')
             }
@@ -132,6 +139,7 @@ App({
   globalData: {
     userInfo: null,
     accessToken: null,
-    nurseId: null
+    url:'https://aliiot.on-bright.com/nursinghome'
+    // url: 'https://10.10.92.161:8401/nursinghome'
   }
 });

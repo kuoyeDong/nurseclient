@@ -19,6 +19,9 @@ Component({
       type: String,
       value: ''
     },
+    callTaskId: {
+      type: String
+    }
   },
   data: {
 
@@ -44,7 +47,7 @@ Component({
     onMessageItemTap: function() {
       wx: wx.navigateTo({
         url: '/pages/ssodetial/ssodetial?name=' + this.properties.name + '&iconPath=' + this.properties.iconPath +
-          '&messageTime=' + this.properties.messageTime,
+          '&messageTime=' + this.properties.messageTime +'&callTaskId='+this.properties.callTaskId,
         success: function(res) {},
         fail: function(res) {},
         complete: function(res) {},

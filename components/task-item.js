@@ -19,6 +19,10 @@ Component({
     taskTime: {
       type: String
     },
+    /* 任务id */
+    taskId:{
+      type: String
+    }
   },
   data: {
 
@@ -44,7 +48,7 @@ Component({
     onTaskItemTap: function() {
       wx: wx.navigateTo({
         url: '/pages/taskdetial/taskdetial?name=' + this.properties.name + '&taskTime=' + this.properties.taskTime +
-          '&iconPath=' + this.properties.iconPath,
+          '&iconPath=' + this.properties.iconPath +'&taskId='+this.properties.taskId,
         success: function(res) {},
         fail: function(res) {},
         complete: function(res) {},

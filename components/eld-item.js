@@ -13,10 +13,10 @@ Component({
     iconPath: {
       type: String,
     },
-    position: {
+    age: {
       type: String,
     },
-    phone: {
+    gender: {
       type: String,
     }
   },

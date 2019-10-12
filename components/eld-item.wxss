@@ -21,7 +21,7 @@
   color: #aaa;
 }
 
-.eld-birty-day {
+.eld-age {
   color: #aaa;
   margin: 10rpx;
   font-size: 12px;
