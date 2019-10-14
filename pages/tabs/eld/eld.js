@@ -28,11 +28,18 @@ Page({
       success(res) {
         var data = res.data;
         console.log(data);
-        var eldList = data.data.records;
-        console.log(eldList.length)
-        _this.setData({
-          dataList: eldList
-        })
+        if(data.code==0){
+          var eldList = data.data.records;
+          console.log(eldList.length)
+          _this.setData({
+            dataList: eldList
+          })
+          app.connectPush()
+        }else{
+          wx.reLaunch({
+            url: '/pages/login/login',
+          })
+        }
       }
     })
   },

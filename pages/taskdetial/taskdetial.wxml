@@ -1,7 +1,10 @@
 <view class="taskdetial-column">
   <image class="taskdetial-img" src="{{iconPath}}"></image>
-  <text class="taskdetial-text">任务名称:{{taskName}}</text>
-  <text class="taskdetial-time">任务时间：{{taskTime}}</text>
-  <text class="taskdetial-text">{{finishTips}}</text>
-  <van-button class="taskdetial-row" bindtap="taskFinish" type="primary">任务已完成</van-button>
+  <text class="taskdetial-text">名称:{{taskName}}</text>
+  <text class="taskdetial-time">时间：{{taskTime}}</text>
+  <text class="taskdetial-text">状态：{{status}}</text>
+  <view class="taskdetial-column" wx:if="{{status=='待完成'}}">
+    <text class="taskdetial-text">{{finishTips}}</text>
+    <van-button class="taskdetial-row" bindtap="taskFinish" type="primary">确认完成</van-button>
+  </view>
 </view>

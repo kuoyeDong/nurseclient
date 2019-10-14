@@ -20,7 +20,11 @@ Component({
       type: String
     },
     /* 任务id */
-    taskId:{
+    taskId: {
+      type: String
+    },
+    /* 任务完成状态 */
+    status: {
       type: String
     }
   },
@@ -48,7 +52,7 @@ Component({
     onTaskItemTap: function() {
       wx: wx.navigateTo({
         url: '/pages/taskdetial/taskdetial?name=' + this.properties.name + '&taskTime=' + this.properties.taskTime +
-          '&iconPath=' + this.properties.iconPath +'&taskId='+this.properties.taskId,
+          '&iconPath=' + this.properties.iconPath + '&taskId=' + this.properties.taskId + '&status=' + this.properties.status,
         success: function(res) {},
         fail: function(res) {},
         complete: function(res) {},

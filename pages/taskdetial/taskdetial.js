@@ -10,7 +10,8 @@ Page({
     finishTips: '如果任务已完成，可点击按钮确认',
     taskTime: '',
     iconPath: '',
-    taskId: ''
+    taskId: '',
+    status: ''
   },
 
   /**
@@ -21,7 +22,8 @@ Page({
       taskName: options.name,
       taskTime: options.taskTime,
       iconPath: options.iconPath,
-      taskId: options.taskId
+      taskId: options.taskId,
+      status: options.status
     });
   },
 
@@ -71,7 +73,7 @@ Page({
   onShareAppMessage: function() {
 
   },
-
+  /* 完成任务 */
   taskFinish: function() {
     console.log('onLoad');
     var _this = this;

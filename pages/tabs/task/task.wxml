@@ -1,4 +1,4 @@
 <!--pages/tabs/task.wxml-->
 <view wx:for-items="{{dataList}}">
-  <task-item name="{{item.elderName}}{{item.taskName}}" iconPath="/res/task.png" taskTime="{{item.execTime}}" taskId="{{item.taskId}}" />
+  <task-item name="{{item.elderName}}{{item.taskName}}" iconPath="/res/task.png" taskTime="{{item.execTime}}" taskId="{{item.taskId}}" status="{{item.completeTime!=null?'已完成':'待完成'}}"/>
 </view>

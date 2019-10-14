@@ -8,20 +8,37 @@ Page({
     password: '',
   },
 
-  onLoad: function () {
-  },
-  nameInput: function (e) {
-    this.setData({
-      username: e.detail.value
+  onLoad: function() {
+    wx.getStorage({
+      key: 'accessToken',
+      success(res) {
+        console.log(res.data)
+        app.globalData.accessToken = res.data;
+        wx.switchTab({
+          url: '/pages/tabs/eld/eld',
+        })
+      }
     })
   },
-  pwdInput: function (e) {
+  nameInput: function(e) {
     this.setData({
-      password: e.detail.value
+      username: e.detail
     })
   },
-  nurseLogin: function () {
-    if (this.data.username.length == 0 || this.data.password.length==0){
+
+  pwdInput: function(e) {
+    this.setData({
+      password: e.detail
+    })
+  },
+
+  nurseLogin: function() {
+    if (this.data.username.length == 0 || this.data.password.length == 0) {
+      wx.showToast({
+        icon: 'none',
+        title: '请输入账号密码',
+        duration: 800
+      })
       return;
     }
     var base64str = base64.Base64.encode(this.data.password);
@@ -44,16 +61,25 @@ Page({
       },
       success(res) {
         var data = res.data
-        console.log(data);
-        var accessToken = data.access_token;
-        app.globalData.accessToken = accessToken;
-        wx.switchTab({
-          url: '/pages/tabs/eld/eld',
-        })
+        console.log('success', data);
+        if (data.status == null) {
+          var accessToken = data.access_token;
+          wx.setStorage({
+            key: "accessToken",
+            data: accessToken
+          })
+          app.globalData.accessToken = accessToken;
+          wx.switchTab({
+            url: '/pages/tabs/eld/eld',
+          })
+        } else {
+          wx.showToast({
+            icon: 'none',
+            title: data.message,
+            duration: 1500
+          })
+        }
       },
-      fail(res) {
-        console.log(res);
-      }
     })
   }
 });

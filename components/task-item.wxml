@@ -2,8 +2,9 @@
   <view class="task-row" bindtap="onTaskItemTap">
     <image class="task-icon" src="{{iconPath}}"></image>
     <view class="task-column">
-      <text class="task-name">{{name}}</text>
-      <text class="task-time">{{taskTime}}</text>
+      <text class="task-name">任务：{{name}}</text>
+      <text class="task-time">时间：{{taskTime}}</text>
+      <text class="task-time" >状态：{{status}}</text>
     </view>
   </view>
 </task-item>

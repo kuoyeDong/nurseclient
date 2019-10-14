@@ -10,7 +10,8 @@ Page({
     name: '这位长者',
     iconPath: '',
     messageTime: '',
-    callTaskId:''
+    callTaskId:'',
+    status:''
   },
 
   /**
@@ -21,7 +22,8 @@ Page({
       name: options.name,
       iconPath: options.iconPath,
       messageTime: options.messageTime,
-      callTaskId: options.callTaskId
+      callTaskId: options.callTaskId,
+      status: options.status
     })
   },
 

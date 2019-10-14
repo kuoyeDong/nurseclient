@@ -4,6 +4,7 @@
     <view class="message-column">
       <text class="message-name">{{name}}</text>
       <text class="message-time">{{messageTime}}</text>
+       <text class="message-time" >状态：{{status}}</text>
     </view>
   </view>
 </task-item>

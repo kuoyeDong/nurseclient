@@ -2,6 +2,7 @@
 App({
   onLaunch: function() {
     // 展示本地存储能力
+    var _this = this;
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
@@ -63,17 +64,6 @@ App({
       return timeStr
     }
 
-    wx.connectSocket({
-      // 可靠的地址
-      // url: 'wss://websck.eloeg.wang:20001',
-      // 昂宝地址
-      // url: 'wss://aliiot.on-bright.com/webWxSocket/adolf',
-      // jj调试服务器地址
-      url: 'ws://10.10.92.161:8901/webWxSocket/jetty'
-      // web端使用地址
-      // url: 'wss://aliiot.on-bright.com/queueServer',
-    })
-
     wx.onSocketError(function() {
       console.log('onSocketError')
     })
@@ -85,44 +75,37 @@ App({
     wx.onSocketClose(function(res) {
       console.log('onSocketClose')
       wx.connectSocket({
-        // 可靠的地址
-        // url: 'wss://websck.eloeg.wang:20001',
         // 昂宝地址
-        // url: 'wss://aliiot.on-bright.com/webWxSocket/adolf',
+        url: 'wss://aliiot.on-bright.com/webWxSocket/' + _this.globalData.accessToken,
         // jj调试服务器地址
-        url: 'ws://10.10.92.161:8901/webWxSocket/jetty'
-      // web端使用地址
-      // url: 'wss://aliiot.on-bright.com/queueServer',
+        // url: 'ws://10.10.92.161:8901/webWxSocket/jetty'
       })
     })
 
     wx.onSocketMessage(function({
       data
     }) {
-      console.log('onSocketMessage');
       var jo = JSON.parse(data);
-      var show = (jo.callTaskId !== null);
+      var show = (jo.type == 1);
       console.log(jo);
       if (show) {
-        // var time = parseTime(jo.alarmTime * 1);
         wx.showModal({
           title: jo.elderName + jo.callTaskName,
           content: '呼叫时间:' + jo.execTime + ',请前往协助！',
           showCancel: true,
-          cancelText: '忽略',
           confirmText: '前往',
+          cancelText: '忽略',
           success: function(res) {
             if (res.confirm) {
-              console.log('用户点击确定')
               wx: wx.navigateTo({
                 url: '/pages/ssodetial/ssodetial?name=' + jo.elderName + jo.callTaskName + '&iconPath=/res/call_message.png' +
-                  '&messageTime=' + jo.execTime + '&callTaskId=' + jo.callTaskId,
+                  '&messageTime=' + jo.execTime + '&callTaskId=' + jo.callTaskId + '&status=待完成',
                 success: function(res) {},
                 fail: function(res) {},
                 complete: function(res) {},
               })
             } else if (res.cancel) {
-              console.log('用户点击取消')
+             
             }
           },
           fail: function(res) {
@@ -134,12 +117,21 @@ App({
         })
       }
     })
-
+  },
+  /* 连接推送 */
+  connectPush: function () {
+    wx.connectSocket({
+      // 昂宝地址
+      url: 'wss://aliiot.on-bright.com/webWxSocket/' + this.globalData.accessToken,
+      // jj调试服务器地址
+      // url: 'ws://10.10.92.161:8901/webWxSocket/jetty'
+    })
   },
   globalData: {
     userInfo: null,
     accessToken: null,
-    url:'https://aliiot.on-bright.com/nursinghome'
+    url: 'https://aliiot.on-bright.com/nursinghome'
     // url: 'https://10.10.92.161:8401/nursinghome'
   }
 });
+

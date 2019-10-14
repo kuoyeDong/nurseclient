@@ -1,4 +1,4 @@
 <!--pages/tabs/message.wxml-->
 <view wx:for-items="{{dataList}}">
-  <message-item iconPath="/res/call_message.png" name="{{item.elderName}}{{item.callTaskName}}" messageTime="{{item.execTime}}" callTaskId="{{item.callTaskId}}"></message-item>
+  <message-item iconPath="/res/call_message.png" name="{{item.elderName}}{{item.callTaskName}}" messageTime="{{item.execTime}}" callTaskId="{{item.callTaskId}}" status="{{item.completeTime!=null?'已完成':'待完成'}}"></message-item>
 </view>
