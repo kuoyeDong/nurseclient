@@ -1,8 +1,8 @@
 <view class="login-column">
   <van-cell-group style="margin-top: 200rpx">
-    <van-field required left-icon="contact" label="用户名" placeholder="请输入用户名" bind:change="nameInput" />
-    <van-field required type="password" left-icon="setting-o" label="密码" placeholder="请输入密码" bind:change="pwdInput" />
+    <van-field custom-style="font-size: 18px" required left-icon="contact" label="用户名" placeholder="请输入用户名" bind:change="nameInput" />
+    <van-field custom-style="font-size: 18px" required type="password" left-icon="setting-o" label="密码" placeholder="请输入密码" bind:change="pwdInput" />
   </van-cell-group>
-  <van-button class="login-column" bindtap="nurseLogin" type="danger">登录</van-button>
-  <text class="login-text">如果您还没有账号，请与管理处联系，该账号密码由管理处进行管理，并未开放注册</text>
+  <van-button class="login-button" bindtap="nurseLogin" type="danger">登录</van-button>
+  <text class="login-text">如您没有账号或忘记密码，请联系管理处</text>
 </view>

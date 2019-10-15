@@ -36,7 +36,7 @@ Page({
       data: {
         access_token: app.globalData.accessToken,
         pageNo: 1,
-        pageSize: 100,
+        pageSize: 100000,
       },
       success(res) {
         var data = res.data;

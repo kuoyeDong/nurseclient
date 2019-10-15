@@ -23,7 +23,7 @@ Page({
       data: {
         access_token: app.globalData.accessToken,
         pageNo: 1,
-        pageSize: 100,
+        pageSize: 10000,
       },
       success(res) {
         var data = res.data;
@@ -76,14 +76,14 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
-
+    
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function() {
-
+    
   },
 
   /**

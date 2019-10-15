@@ -13,7 +13,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    
+
   },
 
   /**
@@ -27,27 +27,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    var _this = this;
-    wx.request({
-      url: app.globalData.url + '/css/nurse/calltask/list',
-      header: {
-        'Authorization': 'Basic bnVyc2U6bnVyc2U=',
-        'Content-type': 'application/x-www-form-urlencoded;charset=UTF-8'
-      },
-      data: {
-        access_token: app.globalData.accessToken,
-        pageNo: 1,
-        pageSize: 100,
-      },
-      success(res) {
-        var data = res.data;
-        console.log(data);
-        var callTaskList = data.data.records;
-        _this.setData({
-          dataList: callTaskList
-        })
-      }
-    })
+    this.queryCallTask();
   },
 
   /**
@@ -84,8 +64,28 @@ Page({
   onShareAppMessage: function() {
 
   },
-
+  /* 查询呼叫任务 */
   queryCallTask: function() {
-
+    var _this = this;
+    wx.request({
+      url: app.globalData.url + '/css/nurse/calltask/list',
+      header: {
+        'Authorization': 'Basic bnVyc2U6bnVyc2U=',
+        'Content-type': 'application/x-www-form-urlencoded;charset=UTF-8'
+      },
+      data: {
+        access_token: app.globalData.accessToken,
+        pageNo: 1,
+        pageSize: 100000,
+      },
+      success(res) {
+        var data = res.data;
+        console.log(data);
+        var callTaskList = data.data.records;
+        _this.setData({
+          dataList: callTaskList
+        })
+      }
+    })
   }
 })
