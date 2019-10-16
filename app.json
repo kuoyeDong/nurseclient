@@ -12,8 +12,7 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "养老院护工助手",
-    "navigationBarTextStyle": "black",
-    "enablePullDownRefresh": true
+    "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
   "tabBar": {
@@ -26,13 +25,13 @@
       },
       {
         "pagePath": "pages/tabs/task/task",
-        "text": "任务",
+        "text": "日程任务",
         "iconPath": "res/task.png",
         "selectedIconPath": "res/task.png"
       },
       {
         "pagePath": "pages/tabs/message/message",
-        "text": "SSO",
+        "text": "当天SSO",
         "iconPath": "res/call_message.png",
         "selectedIconPath": "res/call_message.png"
       }
