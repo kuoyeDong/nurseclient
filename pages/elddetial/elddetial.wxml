@@ -1,0 +1,11 @@
+<view class="elddetial-column">
+  <image class="elddetial-img" src="{{iconPath}}"></image>
+  <view class="elddetial-row">
+    <text class="elddetial-text">姓名:{{name}}</text>
+    <text class="elddetial-text">年龄:{{age}}</text>
+    <text class="elddetial-text">性别:{{gender}}</text>
+  </view>
+  <text class="elddetial-phoneNumber">电话：{{phoneNumber}}</text>
+  <text class="elddetial-address">家庭住址：{{address}}</text>
+  <text class="elddetial-checkInTime">入住时间：{{checkInTime}}</text>
+</view>

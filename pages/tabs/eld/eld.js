@@ -28,14 +28,23 @@ Page({
       success(res) {
         var data = res.data;
         console.log(data);
-        if(data.code==0){
-          var eldList = data.data.records;
-          console.log(eldList.length)
-          _this.setData({
-            dataList: eldList
-          })
+        if (data.code == 0) {
+          if (data.data != null) {
+            var eldList = data.data.records;
+            _this.setData({
+              dataList: eldList
+            })
+          }else{
+            _this.setData({
+              dataList: []
+            })
+          }
           app.connectPush()
-        }else{
+        } else {
+          wx.setStorage({
+            key: "accessToken",
+            data: null
+          })
           wx.reLaunch({
             url: '/pages/login/login',
           })
@@ -76,14 +85,14 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
-    
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function() {
-    
+
   },
 
   /**

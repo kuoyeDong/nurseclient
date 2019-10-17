@@ -1,5 +1,5 @@
 <eld-item>
-  <view class="eld-row" bindtap="onMyButtonTap">
+  <view class="eld-row" bindtap="onEldItemTap">
     <image class="eld-icon" src="{{iconPath}}"></image>
     <view class="eld-column">
       <text class="eld-name">{{name}}</text>

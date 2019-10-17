@@ -13,10 +13,12 @@ Page({
       key: 'accessToken',
       success(res) {
         console.log(res.data)
-        app.globalData.accessToken = res.data;
-        wx.switchTab({
-          url: '/pages/tabs/eld/eld',
-        })
+        if (res.data!=null){
+          app.globalData.accessToken = res.data;
+          wx.switchTab({
+            url: '/pages/tabs/eld/eld',
+          })
+        }
       }
     })
   },

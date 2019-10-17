@@ -10,8 +10,8 @@ Page({
     name: '这位长者',
     iconPath: '',
     messageTime: '',
-    callTaskId:'',
-    status:''
+    callTaskId: '',
+    status: ''
   },
 
   /**
@@ -88,10 +88,21 @@ Page({
         callTaskId: this.data.callTaskId
       },
       success(res) {
-        console.log(res.data)
-        wx.navigateBack({
+        var data = res.data;
+        console.log(data);
+        if (data.code == 0) {
+          wx.navigateBack({
 
-        })
+          })
+        } else {
+          wx.setStorage({
+            key: "accessToken",
+            data: null
+          })
+          wx.reLaunch({
+            url: '/pages/login/login',
+          })
+        }
       }
     })
   },

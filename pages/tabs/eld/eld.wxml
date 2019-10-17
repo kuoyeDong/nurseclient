@@ -1,5 +1,4 @@
 <!--pages/tabs/eld.wxml-->
 <view wx:for-items="{{dataList}}">
-  <eld-item name="{{item.name}}" iconPath="{{item.gender== 0?'/res/oldman.png':'/res/oldwoman.png'}}" 
-  gender="{{item.gender== 0?'男':'女'}}" age="{{item.age}}"></eld-item>
+  <eld-item name="{{item.name}}" iconPath="{{item.gender== 0?'/res/oldman.png':'/res/oldwoman.png'}}" gender="{{item.gender== 0?'男':'女'}}" age="{{item.age}}" checkInTime="{{item.checkInTime}}" phoneNumber="{{item.phoneNumber}}" address="{{item.address}}"></eld-item>
 </view>

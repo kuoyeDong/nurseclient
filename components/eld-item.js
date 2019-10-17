@@ -18,7 +18,16 @@ Component({
     },
     gender: {
       type: String,
-    }
+    },
+    checkInTime: {
+      type: String,
+    },
+    phoneNumber: {
+      type: String,
+    },
+    address: {
+      type: String,
+    },
   },
   data: {
 
@@ -38,13 +47,21 @@ Component({
   pageLifetimes: {
     // 组件所在页面的生命周期函数
     show: function() {
-      
+
     },
   },
 
   methods: {
-    onMyButtonTap: function() {
-      
+    onEldItemTap: function() {
+      wx: wx.navigateTo({
+        url: '/pages/elddetial/elddetial?name=' + this.properties.name + '&age=' + this.properties.age +
+          '&gender=' + this.properties.gender + '&iconPath=' + this.properties.iconPath +
+          '&age=' + this.properties.age + '&gender=' + this.properties.gender + '&checkInTime=' + this.properties.checkInTime +
+          '&phoneNumber=' + this.properties.phoneNumber + '&address=' + this.properties.address,
+        success: function(res) {},
+        fail: function(res) {},
+        complete: function(res) {},
+      })
     },
   }
 

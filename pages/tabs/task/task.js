@@ -13,14 +13,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
-  },
+  onReady: function() {},
 
   /**
    * 生命周期函数--监听页面显示
@@ -41,10 +40,27 @@ Page({
       success(res) {
         var data = res.data;
         console.log(data);
-        var taskList = data.data.records;
-        _this.setData({
-          dataList: taskList
-        })
+        if (data.code == 0) {
+          if (data.data != null) {
+            console.log("records");
+            var taskList = data.data.records;
+            _this.setData({
+              dataList: taskList
+            })
+          }else{
+            _this.setData({
+              dataList: []
+            })
+          }
+        } else {
+          wx.setStorage({
+            key: "accessToken",
+            data: null
+          })
+          wx.reLaunch({
+            url: '/pages/login/login',
+          })
+        }
       }
     })
   },

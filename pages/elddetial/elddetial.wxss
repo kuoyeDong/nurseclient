@@ -1,0 +1,40 @@
+.elddetial-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex;
+  margin: 20rpx;
+}
+
+.elddetial-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.elddetial-img {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.elddetial-text {
+  color: #aaa;
+  margin: 20rpx;
+}
+
+.elddetial-checkInTime {
+  color: rgb(54, 34, 34);
+  margin: 20rpx;
+}
+
+.elddetial-phoneNumber {
+  color: #aaa;
+  margin: 20rpx;
+}
+
+.elddetial-address {
+  color: #aaa;
+  margin: 20rpx;
+  font-size: 12px;
+}

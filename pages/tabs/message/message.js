@@ -81,10 +81,26 @@ Page({
       success(res) {
         var data = res.data;
         console.log(data);
-        var callTaskList = data.data.records;
-        _this.setData({
-          dataList: callTaskList
-        })
+        if (data.code == 0) {
+          if (data.data != null) {
+            var callTaskList = data.data.records;
+            _this.setData({
+              dataList: callTaskList
+            })
+          } else {
+            _this.setData({
+              dataList: []
+            })
+          }
+        } else {
+          wx.setStorage({
+            key: "accessToken",
+            data: null
+          })
+          wx.reLaunch({
+            url: '/pages/login/login',
+          })
+        }
       }
     })
   }
