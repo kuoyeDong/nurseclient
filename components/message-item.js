@@ -25,6 +25,9 @@ Component({
     /* 任务完成状态 */
     status: {
       type: String
+    },
+    elderId: {
+      type: String
     }
   },
   data: {
@@ -51,7 +54,8 @@ Component({
     onMessageItemTap: function() {
       wx: wx.navigateTo({
         url: '/pages/ssodetial/ssodetial?name=' + this.properties.name + '&iconPath=' + this.properties.iconPath +
-          '&messageTime=' + this.properties.messageTime + '&callTaskId=' + this.properties.callTaskId + '&status=' + this.properties.status,
+          '&messageTime=' + this.properties.messageTime + '&callTaskId=' + this.properties.callTaskId + '&status=' + this.properties.status +
+          '&elderId=' + this.properties.elderId,
         success: function(res) {},
         fail: function(res) {},
         complete: function(res) {},

@@ -4,6 +4,7 @@
   <text class="ssodetial-text">{{name}}呼叫了，请即前往协助</text>
   <text class="taskdetial-text">状态：{{status}}</text>
   <view class="ssodetial-column" wx:if="{{status=='待完成'}}">
+    <van-button class="ssodetial-row" bindtap="vist" type="primary">申请开门密码</van-button>
     <van-button class="ssodetial-row" bindtap="ssoConfirm" type="danger">确认完成</van-button>
     <van-button class="ssodetial-row" bindtap="ssoCancel" type="default">忽略</van-button>
   </view>

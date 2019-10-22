@@ -11,7 +11,8 @@ Page({
     iconPath: '',
     messageTime: '',
     callTaskId: '',
-    status: ''
+    status: '',
+    elderId:''
   },
 
   /**
@@ -23,7 +24,8 @@ Page({
       iconPath: options.iconPath,
       messageTime: options.messageTime,
       callTaskId: options.callTaskId,
-      status: options.status
+      status: options.status,
+      elderId: options.elderId
     })
   },
 
@@ -111,6 +113,37 @@ Page({
   ssoCancel: function() {
     wx.navigateBack({
 
+    })
+  },
+
+  vist:function(){
+    wx.request({
+      method: 'POST',
+      url: app.globalData.url + '/css/nurse/vist',
+      header: {
+        'Authorization': 'Basic bnVyc2U6bnVyc2U=',
+      },
+      data: {
+        access_token: app.globalData.accessToken,
+        elderId: this.data.elderId
+      },
+      success(res) {
+        var data = res.data;
+        console.log(data);
+        if (data.code == 0) {
+          wx.navigateBack({
+
+          })
+        } else {
+          wx.setStorage({
+            key: "accessToken",
+            data: null
+          })
+          wx.reLaunch({
+            url: '/pages/login/login',
+          })
+        }
+      }
     })
   }
 })
