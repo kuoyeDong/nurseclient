@@ -12,7 +12,6 @@ Page({
     wx.getStorage({
       key: 'accessToken',
       success(res) {
-        console.log(res.data)
         if (res.data!=null){
           app.globalData.accessToken = res.data;
           wx.switchTab({
@@ -44,11 +43,8 @@ Page({
       return;
     }
     var base64str = base64.Base64.encode(this.data.password);
-    console.log(this.data.username);
-    console.log(base64str);
     var md5Str = md5(base64str + this.data.password);
     const password = md5Str;
-    console.log(password);
     wx.request({
       url: app.globalData.url + '/oauth/token',
       data: {

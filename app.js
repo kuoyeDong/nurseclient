@@ -99,7 +99,8 @@ App({
             if (res.confirm) {
               wx: wx.navigateTo({
                 url: '/pages/ssodetial/ssodetial?name=' + jo.elderName + jo.callTaskName + '&iconPath=/res/call_message.png' +
-                  '&messageTime=' + jo.execTime + '&callTaskId=' + jo.callTaskId + '&status=待完成',
+                  '&messageTime=' + jo.execTime + '&callTaskId=' + jo.callTaskId + '&status=待完成' +
+                  '&elderId=' + jo.elderId,
                 success: function(res) {},
                 fail: function(res) {},
                 complete: function(res) {},
