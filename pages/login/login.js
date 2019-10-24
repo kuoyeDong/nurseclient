@@ -34,7 +34,7 @@ Page({
   },
 
   nurseLogin: function() {
-    if (this.data.username.length == 0 || this.data.password.length == 0) {
+    if (this.data.username.length === 0 || this.data.password.length === 0) {
       wx.showToast({
         icon: 'none',
         title: '请输入账号密码',
@@ -42,9 +42,8 @@ Page({
       })
       return;
     }
-    var base64str = base64.Base64.encode(this.data.password);
-    var md5Str = md5(base64str + this.data.password);
-    const password = md5Str;
+    let base64str = base64.Base64.encode(this.data.password);
+    const password = md5(base64str + this.data.password);
     wx.request({
       url: app.globalData.url + '/oauth/token',
       data: {
@@ -65,7 +64,7 @@ Page({
           wx.setStorage({
             key: "accessToken",
             data: accessToken
-          })
+          });
           app.globalData.accessToken = accessToken;
           wx.switchTab({
             url: '/pages/tabs/eld/eld',
