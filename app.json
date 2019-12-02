@@ -5,8 +5,8 @@
     "pages/tabs/task/task",
     "pages/tabs/message/message",
     "pages/taskdetial/taskdetial",
-    "pages/ssodetial/ssodetial"
-   
+    "pages/ssodetial/ssodetial",
+    "pages/elddetial/elddetial"
   ],
   "window": {
     "backgroundTextStyle": "light",
